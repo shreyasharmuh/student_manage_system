@@ -43,3 +43,46 @@ git clone https://github.com/shreyasharmuh/student_manage_system.git
 cd student_manage_system
 pip install flask
 python app.py
+
+Then open:
+
+http://127.0.0.1:5000
+🌐 Deployment
+
+This project is deployed using Render (Flask Web Service).
+
+📂 Project Structure
+/templates
+    login.html
+    index.html
+    add_student.html
+    edit_student.html
+
+/static
+    style.css
+
+app.py
+students.db
+
+👨‍💻 Author
+Shreyash Sharma
+Linkedin : www.linkedin.com/in/shreyash-sharma-562a333a5
+
+
+## 👨‍💻 Author
+
+**Shreyash Sharma**
+
+ LinkedIn: www.linkedin.com/in/shreyash-sharma-562a333a5
+ GitHub: https://github.com/shreyasharmuh
+
+---
+
+## 💎 Project Highlights
+
+This project focuses on:
+
+ UI/UX engineering for admin systems  
+ Backend CRUD operations  
+ Real-world deployment workflow  
+ Premium frontend styling system  
