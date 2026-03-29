@@ -64,11 +64,6 @@ This project is deployed using Render (Flask Web Service).
 app.py
 students.db
 
-👨‍💻 Author
-Shreyash Sharma
-Linkedin : www.linkedin.com/in/shreyash-sharma-562a333a5
-
-
 ## 👨‍💻 Author
 
 **Shreyash Sharma**
