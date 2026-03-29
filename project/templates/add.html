@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Student</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="layout">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h2>ARCHIVE</h2>
+        <a href="/">Dashboard</a>
+        <a href="/add">Add Student</a>
+    </div>
+
+    <!-- MAIN -->
+    <div class="main">
+
+        <h1>ADD STUDENT</h1>
+        <p>Enter student details</p>
+
+        <form method="POST" class="form-box">
+    
+
+       <input type="text" name="name" placeholder="Full Name (e.g. Rahul Sharma)" required>
+
+       <input type="number" name="age" placeholder="Age (e.g. 21)" required>
+
+       <select name="course" required>
+    <option value="" disabled selected>Select Course</option>
+    <option value="BTECH CSE">BTECH CSE</option>
+    <option value="BTECH IT">BTECH IT</option>
+    <option value="BCA">BCA</option>
+    <option value="BBA">BBA</option>
+    <option value="MCA">MCA</option>
+</select>
+
+    <button type="submit">SUBMIT</button>
+
+</form>
+
+            
+
+
+
+    </div>
+
+</div>
+
+</body>
+</html>
