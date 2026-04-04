@@ -1,9 +1,9 @@
-from flask import Flask, render_template, request, redirect
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, flash
 import sqlite3
+import os
 
 app = Flask(__name__)
-app.secret_key = "shreyash_sharma" # Change this to a random secret key
+app.secret_key = os.environ.get("SECRET_KEY", "dev_fallback_key")# Change this to a random secret key
 
 # Create DB + Table
 def init_db():
@@ -82,6 +82,9 @@ def add_student():
         conn.commit()
         conn.close()
 
+        flash("Student added successfully!")
+        
+        
         return redirect('/')
 
     return render_template('add.html')
@@ -116,6 +119,20 @@ def edit_student(id):
     conn.close()
 
     return render_template('edit.html', student=student)
+
+@app.route('/api/students')
+def api_students():
+    conn = sqlite3.connect('students.db')
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM students")
+    data = cursor.fetchall()
+    conn.close()
+
+    return {
+        "count": len(data),
+        "students": data
+    }
+
 
 import os
 

@@ -379,3 +379,11 @@ option {
     color: #000;
     transform: translateY(-2px);
 }
+.flash {
+  background: #111;
+  color: #fff;
+  padding: 10px;
+  margin: 10px 0;
+  text-align: center;
+  font-size: 14px;
+}
