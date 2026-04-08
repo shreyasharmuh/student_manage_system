@@ -3,7 +3,7 @@ import sqlite3
 import os
 
 app = Flask(__name__)
-app.secret_key = os.environ.get("SECRET_KEY", "dev_fallback_key")# Change this to a random secret key
+app.secret_key = os.environ.get("SECRET_KEY", "dev_fallback_key")
 
 # Create DB + Table
 def init_db():

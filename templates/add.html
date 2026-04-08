@@ -1,49 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Add Student</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <title>Maison Aurielle | Add Record</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
 
 <div class="layout">
 
     <!-- SIDEBAR -->
     <div class="sidebar">
-        <h2>ARCHIVE</h2>
+        <h2>MAISON AURIELLE</h2>
+
         <a href="/">Dashboard</a>
-        <a href="/add">Add Student</a>
+        <a href="/add">Add Record</a>
+        <a href="#">Archive</a>
     </div>
 
     <!-- MAIN -->
     <div class="main">
 
-        <h1>ADD STUDENT</h1>
-        <p>Enter student details</p>
+        <h1>NEW ENTRY</h1>
+        <p>secure archival data input terminal</p>
 
-        <form method="POST" class="form-box">
-    
+        <!-- EDITORIAL FORM CONTAINER -->
+        <div class="form-wrapper">
 
-       <input type="text" name="name" placeholder="Full Name (e.g. Rahul Sharma)" required>
+            <form method="POST" class="form-box">
 
-       <input type="number" name="age" placeholder="Age (e.g. 21)" required>
+                <label>FULL NAME</label>
+                <input type="text" name="name" placeholder="e.g. Rahul Sharma" required>
 
-       <select name="course" required>
-    <option value="" disabled selected>Select Course</option>
-    <option value="BTECH CSE">BTECH CSE</option>
-    <option value="BTECH IT">BTECH IT</option>
-    <option value="BCA">BCA</option>
-    <option value="BBA">BBA</option>
-    <option value="MCA">MCA</option>
-</select>
+                <label>AGE</label>
+                <input type="number" name="age" placeholder="e.g. 21" required>
 
-    <button type="submit">SUBMIT</button>
+                <label>PROGRAM</label>
+                <select name="course" required>
+                    <option value="" disabled selected>Select Program</option>
+                    <option value="BTECH CSE">BTECH CSE</option>
+                    <option value="BTECH IT">BTECH IT</option>
+                    <option value="BCA">BCA</option>
+                    <option value="BBA">BBA</option>
+                    <option value="MCA">MCA</option>
+                </select>
 
-</form>
+                <button type="submit">SUBMIT RECORD</button>
 
-            
+            </form>
 
-
+        </div>
 
     </div>
 

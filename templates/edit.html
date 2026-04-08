@@ -1,49 +1,70 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Edit Student</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <title>Maison Aurielle | Edit Record</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
 
 <div class="layout">
 
     <!-- SIDEBAR -->
     <div class="sidebar">
-        <h2>ARCHIVE</h2>
+        <h2>MAISON AURIELLE</h2>
+
         <a href="/">Dashboard</a>
-        <a href="/add">Add Student</a>
+        <a href="/add">Add Record</a>
+        <a href="#">Archive</a>
     </div>
 
     <!-- MAIN CONTENT -->
     <div class="main">
 
-        <h1>EDIT STUDENT</h1>
-        <p>Modify existing record · maintain data integrity</p>
+        <h1>EDIT RECORD</h1>
+        <p>modify archived identity · maintain system integrity</p>
 
-        <form method="POST" class="form-box">
+        <!-- FORM WRAPPER -->
+        <div class="form-wrapper">
 
-        
+            <form method="POST" class="form-box">
 
-      <input type="text" name="name" value="{{ student[1] }}" required>
+                <label>FULL NAME</label>
+                <input type="text" name="name" value="{{ student[1] }}" required>
 
-      <input type="number" name="age" value="{{ student[2] }}" required>
+                <label>AGE</label>
+                <input type="number" name="age" value="{{ student[2] }}" required>
 
-      <select name="course" required>
-    <option value="BTECH CSE" {% if student[3]=='BTECH CSE' %}selected{% endif %}>BTECH CSE</option>
-    <option value="BTECH IT" {% if student[3]=='BTECH IT' %}selected{% endif %}>BTECH IT</option>
-    <option value="BCA" {% if student[3]=='BCA' %}selected{% endif %}>BCA</option>
-    <option value="BBA" {% if student[3]=='BBA' %}selected{% endif %}>BBA</option>
-    <option value="MCA" {% if student[3]=='MCA' %}selected{% endif %}>MCA</option>
-</select>
+                <label>PROGRAM</label>
+                <select name="course" required>
 
-    <button type="submit">UPDATE</button>
+                    <option value="BTECH CSE" {% if student[3]=='BTECH CSE' %}selected{% endif %}>
+                        BTECH CSE
+                    </option>
 
-</form>
+                    <option value="BTECH IT" {% if student[3]=='BTECH IT' %}selected{% endif %}>
+                        BTECH IT
+                    </option>
 
-            
+                    <option value="BCA" {% if student[3]=='BCA' %}selected{% endif %}>
+                        BCA
+                    </option>
 
+                    <option value="BBA" {% if student[3]=='BBA' %}selected{% endif %}>
+                        BBA
+                    </option>
 
+                    <option value="MCA" {% if student[3]=='MCA' %}selected{% endif %}>
+                        MCA
+                    </option>
+
+                </select>
+
+                <button type="submit">UPDATE RECORD</button>
+
+            </form>
+
+        </div>
 
     </div>
 

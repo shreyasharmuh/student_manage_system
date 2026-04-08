@@ -1,372 +1,376 @@
-/* Layout */
-.layout {
-    display: flex;
+:root {
+    --bg: #070707;
+    --panel: rgba(255, 255, 255, 0.03);
+    --border: rgba(255, 255, 255, 0.08);
+    --text: #eaeaea;
+    --muted: rgba(255, 255, 255, 0.6);
+    --accent: #ffffff;
 }
 
-/* Sidebar */
-.sidebar {
-    width: 220px;
-    height: 100vh;
-    background: #050505;
-    padding: 40px 20px;
-}
+/* ===================== GLOBAL ===================== */
 
-.sidebar h2 {
-    font-weight: 300;
-    letter-spacing: 4px;
-    margin-bottom: 40px;
-}
-
-.sidebar a {
-    display: block;
-    color: #777;
-    text-decoration: none;
-    margin-bottom: 20px;
-    font-size: 13px;
-    letter-spacing: 2px;
-}
-
-.sidebar a:hover {
-    color: #fff;
-}
-
-/* Main */
-.main {
-    flex: 1;
-    padding: 60px 80px;
-}
-
-/* Typography */
-h1 {
-    font-size: 42px;
-    font-weight: 300;
-    letter-spacing: 5px;
-}
-
-p {
-    color: #888;
-    margin-bottom: 40px;
-}
-
-/* Search */
-.search {
-    width: 300px;
-    padding: 10px;
-    background: transparent;
-    border: 1px solid #333;
-    color: #fff;
-    margin-bottom: 40px;
-}
-
-/* Table */
-table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0 12px;
-}
-
-tr {
-    background: #111;
-}
-
-td, th {
-    padding: 18px 20px;
-}
-
-th {
-    color: #777;
-    font-size: 12px;
-    letter-spacing: 2px;
-}
-
-tr:hover {
-    background: #1a1a1a;
-}
-
-/* Links */
-a {
-    color: #aaa;
-    margin-right: 15px;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #fff;
-}
-
-/* Body */
-body {
+* {
     margin: 0;
-    background: #0a0a0a;
-    color: #fff;
-    font-family: 'Helvetica Neue', Arial;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cormorant Garamond', serif;
 }
 
-/* Form Box */
-.form-box {
-    margin-top: 40px;
-    width: 400px;
+body {
+    background: radial-gradient(circle at top, #111, var(--bg) 70%);
+    color: var(--text);
+    overflow-x: hidden;
 }
 
-/* Inputs */
-.form-box input {
-    width: 100%;
-    padding: 14px 0;
-    margin-bottom: 25px;
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid #333;
-    color: #fff;
-    font-size: 14px;
+/* subtle noise overlay */
+.bg-noise {
+    position: fixed;
+    inset: 0;
+    background-image: url("https://www.transparenttextures.com/patterns/noise.png");
+    opacity: 0.03;
+    pointer-events: none;
 }
 
-/* Focus */
-.form-box input:focus {
-    outline: none;
-    border-bottom: 1px solid #888;
+.bg-glow {
+    position: fixed;
+    top: -200px;
+    left: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255,255,255,0.08), transparent 60%);
+    filter: blur(80px);
+    pointer-events: none;
 }
 
-/* Button */
-.form-box button {
-    margin-top: 20px;
-    border: 1px solid #444;
-    background: transparent;
-    color: #fff;
-    padding: 12px 25px;
-    letter-spacing: 2px;
-}
-
-.form-box button:hover {
-    background: #fff;
-    color: #000;
-}
-
-.search {
-    width: 350px;
-    padding: 12px 0;
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid #333;
-    color: #fff;
-    font-size: 14px;
-    letter-spacing: 1px;
-}
-
-.search:focus {
-    outline: none;
-    border-bottom: 1px solid #888;
-}
-
-select {
-    width: 100%;
-    padding: 14px 0;
-    margin-bottom: 25px;
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid #333;
-    color: #fff;
-    font-size: 14px;
-    letter-spacing: 1px;
-}
-
-select:focus {
-    outline: none;
-    border-bottom: 1px solid #888;
-}
-
-option {
-    color: #000;
-}
-
-/* DASHBOARD CARDS */
-.cards {
-    display: flex;
-    gap: 20px;
-    margin: 30px 0 50px 0;
-}
-
-/* GLASS CARD EFFECT */
-.card {
-    flex: 1;
-    padding: 25px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(10px);
-    border-radius: 12px;
-    transition: 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.card h3 {
-    color: #777;
-    font-size: 12px;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
-}
-
-.card h2 {
-    font-size: 28px;
-    font-weight: 300;
-}
-@media (max-width: 768px) {
-    .layout {
-        flex-direction: column;
-    }
-
-    .sidebar {
-        width: 100%;
-        height: auto;
-        text-align: center;
-    }
-
-    .cards {
-        flex-direction: column;
-    }
-
-    .main {
-        padding: 30px;
-    }
-}
-
-/* LOGIN PAGE */
-.login-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: #0a0a0a;
-}
-
-.login-box {
-    width: 320px;
-    padding: 40px;
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.1);
-    backdrop-filter: blur(12px);
-    text-align: center;
-    border-radius: 12px;
-}
-
-.login-box h1 {
-    font-weight: 300;
-    letter-spacing: 4px;
-    margin-bottom: 10px;
-}
-
-.login-box p {
-    color: #777;
-    margin-bottom: 20px;
-}
-
-.login-box input {
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-.login-box button {
-    width: 100%;
-}
-
-/* ===== LUXURY LOGIN PAGE ===== */
+/* ===================== LOGIN ===================== */
 
 .login-page {
     height: 100vh;
-    margin: 0;
-    background: #0a0a0a;
     display: flex;
-    justify-content: center;
     align-items: center;
-    font-family: Arial, sans-serif;
+    justify-content: center;
 }
 
-/* MAIN CONTAINER */
 .login-container {
-    width: 800px;
-    height: 450px;
+    width: 900px;
+    height: 520px;
     display: flex;
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.08);
-    backdrop-filter: blur(15px);
-    border-radius: 12px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(30px);
+    border-radius: 18px;
     overflow: hidden;
-    animation: fadeIn 0.8s ease;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.6);
 }
 
-/* LEFT PANEL (BRAND SIDE) */
-.login-left {
+.login-left,
+.login-right {
     width: 50%;
-    padding: 60px;
+    padding: 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .login-left h1 {
-    font-size: 40px;
-    letter-spacing: 6px;
+    font-size: 52px;
+    letter-spacing: 8px;
     font-weight: 300;
 }
 
 .login-left p {
-    color: #888;
     margin-top: 10px;
+    color: var(--muted);
 }
 
 .login-left span {
-    margin-top: 40px;
+    margin-top: 20px;
     font-size: 12px;
     letter-spacing: 2px;
-    color: #555;
+    color: var(--muted);
 }
 
-/* RIGHT PANEL (FORM SIDE) */
-.login-right {
-    width: 50%;
-    padding: 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+/* form */
 
-/* FORM */
 .login-form {
     display: flex;
     flex-direction: column;
 }
 
-/* LABEL */
 .login-form label {
-    font-size: 12px;
-    color: #777;
+    font-size: 11px;
     letter-spacing: 2px;
-    margin-bottom: 5px;
+    color: var(--muted);
+    margin-bottom: 6px;
 }
 
-/* INPUT */
 .login-form input {
     background: transparent;
     border: none;
-    border-bottom: 1px solid #333;
-    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    padding: 14px 0;
     margin-bottom: 25px;
-    color: #fff;
-    transition: 0.3s;
+    color: var(--text);
+    outline: none;
 }
 
 .login-form input:focus {
-    outline: none;
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid var(--accent);
 }
 
-/* BUTTON */
 .login-form button {
     margin-top: 20px;
-    padding: 12px;
-    border: 1px solid #444;
+    padding: 14px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text);
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-form button:hover {
+    background: var(--text);
+    color: #000;
+}
+
+/* ===================== DASHBOARD ===================== */
+
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* sidebar */
+.sidebar {
+    width: 240px;
+    background: var(--panel);
+    border-right: 1px solid var(--border);
+    backdrop-filter: blur(30px);
+    padding: 40px 20px;
+}
+
+  
+/* ===================== GLOBAL SIDEBAR FONT ===================== */
+
+.sidebar {
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+/* sidebar title */
+.sidebar h2 {
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+/* sidebar links */
+.sidebar a {
+    font-family: inherit;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+
+
+.sidebar a {
+    display: block;
+    color: var(--muted);
+    text-decoration: none;
+    margin: 18px 0;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: var(--text);
+}
+
+/* main */
+.main {
+    flex: 1;
+    padding: 60px;
+}
+
+.main h1 {
+    font-size: 48px;
+    letter-spacing: 6px;
+    font-weight: 300;
+}
+
+.main p {
+    margin-top: 10px;
+    color: var(--muted);
+}
+
+/* cards */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 40px 0;
+}
+
+.card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(25px);
+    border-radius: 14px;
+    padding: 25px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255,255,255,0.2);
+}
+
+.card h3 {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--muted);
+}
+
+.card h2 {
+    margin-top: 10px;
+    font-size: 28px;
+    font-weight: 300;
+}
+
+/* search */
+
+.search {
+    width: 100%;
+    max-width: 420px;
+    padding: 14px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    margin-bottom: 30px;
+}
+
+.search:focus {
+    outline: none;
+    border-bottom: 1px solid var(--accent);
+}
+
+/* table */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+}
+
+th {
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+/* actions */
+
+td a {
+    margin-right: 10px;
+    color: var(--muted);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+td a:hover {
+    color: var(--text);
+}
+
+/* ===================== BOOT SCREEN ===================== */
+
+.boot-screen {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.boot-text {
+    font-size: 14px;
+    letter-spacing: 6px;
+}
+
+.boot-sub {
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--muted);
+}
+  
+/* ===================== FORM SYSTEM (ADD + EDIT PAGES) ===================== */
+
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.form-box {
+    width: 420px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(25px);
+    border-radius: 14px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* labels */
+.form-box label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* inputs */
+.form-box input,
+.form-box select {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 12px 5px;
+    color: #fff;
+    outline: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.form-box input:focus,
+.form-box select:focus {
+    border-bottom: 1px solid #ffffff;
+}
+
+/* dropdown styling */
+.form-box select {
+    cursor: pointer;
+}
+
+/* button */
+.form-box button {
+    margin-top: 20px;
+    padding: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     background: transparent;
     color: #fff;
     letter-spacing: 3px;
@@ -374,16 +378,28 @@ option {
     transition: 0.3s;
 }
 
-.login-form button:hover {
+.form-box button:hover {
     background: #fff;
     color: #000;
-    transform: translateY(-2px);
 }
-.flash {
-  background: #111;
-  color: #fff;
-  padding: 10px;
-  margin: 10px 0;
-  text-align: center;
-  font-size: 14px;
+
+/* page alignment fix for forms inside main */
+.main {
+    align-items: flex-start;
+}
+
+/* subtle animation */
+.form-box {
+    animation: fadeInUp 0.6s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

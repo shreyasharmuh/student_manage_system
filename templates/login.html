@@ -1,37 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>NOIRÉ | Admin Login</title>
+    <title>Maison Aurielle | Secure Access</title>
+
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet"> 
 </head>
 
 <body class="login-page">
 
+<!-- cinematic layers -->
+<div class="bg-noise"></div>
+<div class="bg-glow"></div>
+
+<!-- BOOT OVERLAY (NEW - SAFE ADDITION) -->
+<div class="boot-screen" id="boot" style="display:none;">
+    <div class="boot-text">INITIALIZING MAISON AURIELLE SYSTEM</div>
+    <div class="boot-sub">verifying credentials...</div>
+</div>
+
 <div class="login-container">
 
+    <!-- LEFT SIDE (BRAND UPGRADED) -->
     <div class="login-left">
-        <h1>student archive</h1>
-        <p>Student Management System</p>
-        <span>Sign in to continue</span>
+        <h1>MAISON<br>AURIELLE</h1>
+        <p>Archive Intelligence System</p>
+        <span>Restricted Access Interface</span>
     </div>
 
+    <!-- RIGHT SIDE -->
     <div class="login-right">
 
         <form method="POST" class="login-form">
 
-            <label>Username</label>
-            <input type="text" name="username" placeholder="Enter username" required>
+            <label>Admin ID</label>
+            <input type="text" name="username" placeholder="Enter access ID" required>
 
-            <label>Password</label>
-            <input type="password" name="password" placeholder="Enter password" required>
+            <label>Security Key</label>
+            <input type="password" name="password" placeholder="Enter passcode" required>
 
-            <button type="submit">SIGN IN</button>
+            <button type="submit">ACCESS SYSTEM</button>
+
+            <p class="hint">Encrypted connection • Level 5 clearance</p>
 
         </form>
 
     </div>
 
 </div>
+
+<!-- JS BOOT ANIMATION (SAFE NON-BREAKING) -->
+<script>
+document.querySelector(".login-form").addEventListener("submit", function () {
+    const boot = document.getElementById("boot");
+    boot.style.display = "flex";
+
+    setTimeout(() => {
+        document.querySelector(".boot-text").innerText = "ACCESS GRANTED";
+        document.querySelector(".boot-sub").innerText = "redirecting...";
+    }, 1500);
+});
+</script>
 
 </body>
 </html>
