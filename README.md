@@ -38,43 +38,7 @@ Designed as a minimal administrative system rather than a traditional CRUD app.
 
 ---
 
-## PROJECT STRUCTURE
-# STUDENT ARCHIVE SYSTEM
 
-A minimal Flask-based student management interface  
-designed as a clean administrative archive system.
-
----
-
-## OVERVIEW
-
-Student Archive System is a lightweight CRUD application built with Flask.  
-It focuses on clarity, structured data handling, and a refined UI experience inspired by modern editorial dashboards.
-
----
-
-## CORE FUNCTIONALITY
-
-- Secure authentication flow
-- Create student records
-- Edit existing entries
-- Delete records
-- Structured dashboard view
-
----
-
-## STACK
-
-Flask · Python · Jinja2 · HTML · CSS · SQLite/MySQL
-
----
-
-## INTERFACE
-
-A restrained, typography-led UI with emphasis on spacing, hierarchy, and simplicity.  
-Designed as a minimal administrative system rather than a traditional CRUD app.
-
----
 
 ## PROJECT STRUCTURE
 /templates → HTML views
