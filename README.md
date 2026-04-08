@@ -63,12 +63,9 @@ http://127.0.0.1:5000/
 
 
 CONNECT
-Shreyash Sharma
-LinkedIn
-→ shreyash[linkedin](https://www.linkedin.com/in/shreyash-sharma-562a333a5/)
 
-Instagram
-→ https://www.instagram.com/shreyasharmuh
+→ [LinkedIn]([LinkedIn](https://www.linkedin.com/in/shreyash-sharma-562a333a5/))  
+→ [Instagram]([Instagram](https://www.instagram.com/shreyasharmuh/))
 
 FUTURE DIRECTION
 API-first architecture
